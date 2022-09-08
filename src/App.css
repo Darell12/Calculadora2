@@ -1,38 +1,92 @@
-.App {
+@import url("http://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #8E0E00;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
+   
+    
+}
+
+.container {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  width: 256px;
   text-align: center;
+  /* border: 3px solid #020202; */
+  background: #ffffff;
+  border-radius: 13px;
+  box-shadow: 1px 2px 5px 7px rgb(224, 90, 90);
+}  
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(60px, auto);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input[type="text"] {
+  height: 75px;
+  width: 249px;
+  background-color: #10111600;
+  border: 0px;
+  color: rgb(29, 12, 12);
+  text-align: right;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#clear {
+  grid-column: 1/3;
+  grid-row: 1;
+  color: #ffffff;
+  border: 2px solid #020202;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#result{
+  grid-column: 3/5;
+  grid-row: 5;
+  color: #f7f7f7;
+  border: 2px solid #020202;
 }
 
-.App-link {
-  color: #61dafb;
+#backspace {
+  color: #fdfdfd;
+  border: 2px solid #020202;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button{
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #262834;
+  color: #ffff;
+  font-weight: 500;
+  border: 2px solid #020202;
+}
+
+input:focus,
+input:active,
+input:focus,
+input:active{
+  outline: none;
+}
+
+.highlight{
+  background: #e23030;
 }
